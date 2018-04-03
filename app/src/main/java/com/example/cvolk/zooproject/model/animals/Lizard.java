@@ -1,6 +1,6 @@
 package com.example.cvolk.zooproject.model.animals;
 
-public class Lizard extends Animal {
+public class Lizard extends Reptile {
 
     protected static int population = 0;
 

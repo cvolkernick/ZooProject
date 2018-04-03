@@ -6,7 +6,7 @@ import com.example.cvolk.zooproject.model.food.Food;
 
 import static android.content.ContentValues.TAG;
 
-public class Monkey extends Animal {
+public class Monkey extends Primate {
 
     protected static int population = 0;
 

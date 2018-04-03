@@ -4,7 +4,7 @@ import android.util.Log;
 
 import static android.content.ContentValues.TAG;
 
-public class Snake extends Animal {
+public class Snake extends Reptile {
 
     protected static int population = 0;
 

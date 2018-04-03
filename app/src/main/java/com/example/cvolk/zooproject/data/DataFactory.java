@@ -35,11 +35,31 @@ public class DataFactory {
         List<String> animalTypes = new ArrayList<>();
 
         for (Animal a : animalsList) {
-            if (!animalTypes.contains(a.getClass().getCanonicalName())){
-                animalTypes.add(a.getClass().getCanonicalName());
+            String[] parts = a
+                    .getClass()
+                    .getSuperclass()
+                    .getCanonicalName()
+                    .split("\\.");
+            String typeName = parts[parts.length - 1];
+            if (!animalTypes.contains(typeName)){
+                animalTypes.add(typeName);
             }
         }
 
         return animalTypes;
+    }
+
+    public static int getTypeCount(String typeName) {
+        int typeCount = 0;
+
+        for (Animal a : animalsList) {
+            String[] parts = a.getClass().getSuperclass().getCanonicalName().split("\\.");
+            String currentTypeName = parts[parts.length - 1];
+
+            if (currentTypeName.equals(typeName)) {
+                typeCount++;
+            }
+        }
+        return typeCount;
     }
 }

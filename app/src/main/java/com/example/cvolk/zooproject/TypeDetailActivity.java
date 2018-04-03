@@ -3,11 +3,11 @@ package com.example.cvolk.zooproject;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class CategoriesActivity extends AppCompatActivity {
+public class TypeDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categories);
+        setContentView(R.layout.activity_type_detail);
     }
 }
