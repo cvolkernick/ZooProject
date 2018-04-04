@@ -23,25 +23,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        int viewNum;
-
-        switch (viewType) {
-            case 0:
-                viewNum = R.layout.small_item;
-                break;
-            case 1:
-                viewNum = R.layout.medium_item;
-                break;
-            case 2:
-                viewNum = R.layout.large_item;
-                break;
-            default:
-                viewNum = 3;
-        }
 
         View view = LayoutInflater
                 .from(parent.getContext())
-                .inflate(viewNum, parent, false);
+                .inflate(viewType, parent, false);
 
         return new ViewHolder(view);
     }
@@ -63,13 +48,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         int viewNum;
 
         if (a.getWeight() < 50) {
-            viewNum = 0;
+            viewNum = R.layout.small_item;
         }
         else if(a.getWeight() >= 50 && a.getWeight() <= 150) {
-            viewNum = 1;
+            viewNum = R.layout.medium_item;
         }
         else {
-            viewNum = 3;
+            viewNum = R.layout.large_item;
         }
 
         return viewNum;
