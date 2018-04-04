@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".TypeActivity" />
-        <activity android:name=".TypeDetailActivity"></activity>
+        <activity android:name=".TypeDetailActivity" />
+        <activity android:name=".AnimalDetailActivity"></activity>
     </application>
 
 </manifest>

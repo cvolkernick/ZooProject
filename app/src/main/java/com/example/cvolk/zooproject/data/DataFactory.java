@@ -16,7 +16,7 @@ public class DataFactory {
     public static void initAnimals() {
         animalsList = new ArrayList<>();
 
-        Lizard l = new Lizard(10);
+        Lizard l = new Lizard(55);
         Monkey m = new Monkey(25);
         Snake s = new Snake(5);
         Tiger t = new Tiger(175);
