@@ -4,5 +4,8 @@ public class Lizard extends Reptile {
 
     protected static int population = 0;
 
-    public Lizard() { population++; }
+    public Lizard(int weight) {
+        population++;
+        this.setWeight(weight);
+    }
 }

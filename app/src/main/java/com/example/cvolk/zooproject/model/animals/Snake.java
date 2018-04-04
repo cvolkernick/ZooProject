@@ -7,9 +7,17 @@ import static android.content.ContentValues.TAG;
 public class Snake extends Reptile {
 
     protected static int population = 0;
+    private int weight;
 
-    public Snake() {
+    public Snake(int weight) {
         population++;
+        setWeight(weight);
+    }
+
+    public int getWeight() { return weight; }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
     @Override

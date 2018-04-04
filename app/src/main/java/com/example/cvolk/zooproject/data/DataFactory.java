@@ -16,15 +16,17 @@ public class DataFactory {
     public static void initAnimals() {
         animalsList = new ArrayList<>();
 
-        Lizard l = new Lizard();
-        Monkey m = new Monkey();
-        Snake s = new Snake();
-        Tiger t = new Tiger();
+        Lizard l = new Lizard(10);
+        Monkey m = new Monkey(25);
+        Snake s = new Snake(5);
+        Tiger t = new Tiger(175);
+        Tiger t2 = new Tiger(125);
 
         animalsList.add(l);
         animalsList.add(m);
         animalsList.add(s);
         animalsList.add(t);
+        animalsList.add(t2);
     }
 
     public static List<Animal> getAnimalsList() {
@@ -61,5 +63,20 @@ public class DataFactory {
             }
         }
         return typeCount;
+    }
+
+    public static List<Animal> getAnimalsOfType(String type) {
+        List<Animal> filteredTypes = new ArrayList<>();
+
+        for (Animal a : animalsList) {
+            String[] typeParts = a.getClass().getSuperclass().getCanonicalName().split("\\.");
+            String currentType = typeParts[typeParts.length - 1];
+
+            if (currentType.equals(type)) {
+                filteredTypes.add(a);
+            }
+        }
+
+        return filteredTypes;
     }
 }
