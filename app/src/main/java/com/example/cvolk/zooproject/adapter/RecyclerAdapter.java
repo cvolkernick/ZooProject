@@ -1,5 +1,6 @@
 package com.example.cvolk.zooproject.adapter;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.cvolk.zooproject.AnimalDetailActivity;
 import com.example.cvolk.zooproject.R;
 import com.example.cvolk.zooproject.model.animals.Animal;
 
@@ -40,6 +42,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             String animalName = parts[parts.length - 1];
             holder.tvName.setText(animalName);
         }
+
+
     }
 
     @Override
@@ -66,7 +70,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         return animals.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private final TextView tvName;
 
@@ -74,6 +78,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             super(itemView);
 
             tvName = itemView.findViewById(R.id.tvName);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            Animal animal = animals.get(getLayoutPosition());
+
+            Intent intent = new Intent(itemView.getContext(), AnimalDetailActivity.class);
+            intent.putExtra("data", animal);
+            itemView.getContext().startActivity(intent);
         }
     }
 }

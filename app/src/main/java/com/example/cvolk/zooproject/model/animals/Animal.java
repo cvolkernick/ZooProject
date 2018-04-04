@@ -2,7 +2,9 @@ package com.example.cvolk.zooproject.model.animals;
 
 import com.example.cvolk.zooproject.model.food.Food;
 
-public abstract class Animal {
+import java.io.Serializable;
+
+public abstract class Animal implements Serializable {
 
     private int energyLevel;
     private int weight;
@@ -29,6 +31,10 @@ public abstract class Animal {
 
     public void sleep() {
         setEnergyLevel(energyLevel + 10);
+    }
+
+    public String getSimpleClassName() {
+        return this.getClass().getSimpleName();
     }
 
     @Override

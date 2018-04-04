@@ -10,16 +10,18 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ivAnimal"/>
+        android:id="@+id/ivAnimal" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvName" />
+        android:id="@+id/tvName"
+        android:layout_below="@+id/ivAnimal"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvWeight" />
+        android:id="@+id/tvWeight"
+        android:layout_below="@+id/tvName"/>
 
 </RelativeLayout>
